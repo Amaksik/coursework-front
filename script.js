@@ -128,7 +128,7 @@ function AddElementOptionByName(currencyName){
 }
 
 async function asyncCountriesFetch(){
-    let response  = await fetch(apiUrl);
+    let response  = await fetch(apiUrl+'api/rate');
     let names = await response.json();
     names.forEach(name => {
         AddElementOptionByName(name);
@@ -153,6 +153,9 @@ function readCookie() {
 }
 function Updatecookies(newname){
     let array = JSON.parse(readCookie());
+    if(!array){
+        array = []
+    }
     array.push(newname);
     let value = JSON.stringify(array);
     createHistoryCookie(value);
