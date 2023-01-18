@@ -1,18 +1,28 @@
 const apiUrl = 'https://crypto-widget-prod-course-work-axm52l.mo6.mogenius.io/api/rate';//https://localhost:44358/api/rate
+const cookieName = 'WidgetValues';
+
 console.log(window.innerWidth);
 const width = window.innerHeight;
 let currenciesNamearr;
 const init = function(){
-    names = ["TOR","ETH","ADA","ABC"];
-    UpdateGraph(names[Math.floor(Math.random() * names.length)]);
+    var latest = readCookie();
+    console.log(latest);
+    if(latest){
+        let array = JSON.parse(latest);
+        array.forEach(name => {
+            AddCurrency(name);
+        })
+        UpdateGraph(array[0]);
+    }
+    else{
+        names = ["TOR","ETH","ADA","ABC"];
+        UpdateGraph(names[Math.floor(Math.random() * names.length)]);
+    }
+    
     asyncCountriesFetch();
 }
 if(width<=500){
     document.getElementById('nomics-ticker').remove();
-}
-function AddCookie(){
-    document.cookie = "widget=John-Doe";
-    document.cookie = "witcher=Geralt; SameSite=None; Secure"
 }
 function remove(el) {
     var element = el.currentTarget;
@@ -34,7 +44,9 @@ function AddCurrency(name){
         new_price_div.className = "price-element";
         new_price_div.addEventListener('click', remove, false);
 
-        document.getElementById('tracker-body').appendChild(new_price_div)
+        document.getElementById('tracker-body').appendChild(new_price_div);
+
+        Updatecookies(name);
     }
     else{
         alert("Maximum amount of currencies added")
@@ -123,3 +135,25 @@ async function asyncCountriesFetch(){
     });
 }
 window.onload = init;
+
+function createHistoryCookie(value) {
+var expires = "";
+document.cookie = cookieName+"="+value+expires+"; path=/";
+}
+
+function readCookie() {
+    var nameEQ = cookieName + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+function Updatecookies(newname){
+    let array = JSON.parse(readCookie());
+    array.push(newname);
+    let value = JSON.stringify(array);
+    createHistoryCookie(value);
+}
