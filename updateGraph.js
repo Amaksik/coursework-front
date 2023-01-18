@@ -1,4 +1,3 @@
-const defaultCurrencies = ["TOR","ETH","ADA","DOGE"];
 function AddGraph(name){
     var graphwrapper = document.getElementById('nomics-ticker');
     var graph = createGraphByName(name);
@@ -27,6 +26,7 @@ function readSingleCookie() {
 }
 
 function GenerateGraph(){
+    const defaultCurrencies = ["TOR","ETH","ADA","DOGE"];
     var latest = readSingleCookie();
     if(latest){
         let array = JSON.parse(latest);

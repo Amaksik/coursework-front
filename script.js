@@ -5,6 +5,13 @@ console.log(window.innerWidth);
 const width = window.innerHeight;
 let currenciesNamearr;
 const init = function(){
+    var latest = readCookie();
+    if(latest){
+        let array = JSON.parse(latest);
+        array.forEach(name => {
+            AddCurrency(name);
+        })
+    }
     asyncCountriesFetch();
 }
 if(width<=500){
