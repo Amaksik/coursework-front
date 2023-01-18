@@ -5,6 +5,7 @@ let currenciesNamearr;
 const init = function(){
     names = ["TOR","ETH","ADA","ABC"];
     UpdateGraph(names[Math.floor(Math.random() * names.length)]);
+    asyncCountriesFetch();
 }
 if(width<=500){
     document.getElementById('nomics-ticker').remove();
