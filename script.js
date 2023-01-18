@@ -5,20 +5,6 @@ console.log(window.innerWidth);
 const width = window.innerHeight;
 let currenciesNamearr;
 const init = function(){
-    var latest = readCookie();
-    console.log(latest);
-    if(latest){
-        let array = JSON.parse(latest);
-        array.forEach(name => {
-            AddCurrency(name);
-        })
-        AddGraph(array[0]);
-    }
-    else{
-        names = ["TOR","ETH","ADA","ABC"];
-        AddGraph(names[Math.floor(Math.random() * names.length)]);
-    }
-    
     asyncCountriesFetch();
 }
 if(width<=500){

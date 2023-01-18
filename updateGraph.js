@@ -1,9 +1,4 @@
-// function UpdateGraph(){
-//     names = ["TOR","ETH","ADA","ABC"];
-//     const currencyName = names[Math.floor(Math.random() * names.length)]
-//     var widget = document.getElementById('nomics-ticker-replacible');
-//     widget.setAttribute('data-base',currencyName);
-// }
+defaultCurrencies = ["TOR","ETH","ADA","DOGE"];
 function AddGraph(name){
     var graphwrapper = document.getElementById('nomics-ticker');
     var graph = createGraphByName(name);
@@ -19,3 +14,27 @@ function createGraphByName(currencyName) {
   
     return div.firstChild;
 }
+
+function readSingleCookie() {
+    var nameEQ = 'WidgetValues' + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function GenerateGraph(){
+    var latest = readSingleCookie();
+    if(latest){
+        let array = JSON.parse(latest);
+        AddGraph(array[0]);
+    }
+    else{
+        
+        AddGraph(defaultCurrencies[Math.floor(Math.random() * names.length)]);
+    }
+}
+GenerateGraph();
