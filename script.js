@@ -1,12 +1,11 @@
-const apiUrl = 'https://crypto-widget-prod-course-work-axm52l.mo6.mogenius.io/api/rate';//https://localhost:44358/api/rate
+const apiUrl = 'https://crypto-widget-prod-course-work-axm52l.mo6.mogenius.io/api/rate'
+names = ["ETH","ADA","BTC", "DOGE"];
+console.log(document.cookie);
+const currencyName = names[Math.floor(Math.random() * names.length)]
+window.onload = AddGraph(currencyName);
 console.log(window.innerWidth);
 const width = window.innerHeight;
 let currenciesNamearr;
-const init = function(){
-    names = ["TOR","ETH","ADA","ABC"];
-    UpdateGraph(names[Math.floor(Math.random() * names.length)]);
-    asyncCountriesFetch();
-}
 if(width<=500){
     document.getElementById('nomics-ticker').remove();
 }
@@ -122,4 +121,4 @@ async function asyncCountriesFetch(){
         AddElementOptionByName(name);
     });
 }
-window.onload = init;
+asyncCountriesFetch();
