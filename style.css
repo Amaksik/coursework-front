@@ -1,0 +1,100 @@
+.d-flex{
+    display: flex;
+}
+.sp-btw{
+    justify-content: space-around;
+}
+.a-cent{
+    align-items: center;
+}
+
+header{
+    background-color: black;
+    height: 4rem;
+    border-bottom: solid orange;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+body{
+    margin: 0;
+}
+img.resize {
+    width: 3.5rem; /* you can use % */
+    height: auto;
+}
+button{
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.price-element{
+    display: flex;
+    justify-content: space-around;
+    background-color: lightgray;
+    padding: 1rem;
+    margin: 1rem;
+
+}
+.bottom{
+    position:absolute;  
+    bottom:0;
+    width: 100%;
+}
+.modal{
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 100px; /* Need a specific value to work */
+  }
+
+
+@media screen and (max-width: 300px)and (max-height: 150px) {
+    body{
+        background-color: black;
+    }
+    .price-element{
+        width: 90%;
+    }
+    .wrapper{
+        justify-content: space-around;
+    }
+}
+@media screen and (max-width: 450px) and (min-height: 150px) and (max-height: 500px) {
+    body {
+        background-color: black;
+    }
+    .nomics-ticker-widget{
+        display: none;
+    }
+    .price-element{
+        width: 40%;
+    }
+}
+@media screen and (min-height: 500px) and (min-width: 450px) {
+    body {
+        background-color: black;
+    }
+    .price-element{
+        width: 30%;
+    }
+}
+.nomics-ticker-widget-footer{
+    display:none !important;
+}

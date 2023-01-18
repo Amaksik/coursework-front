@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+<header class="d-flex sp-btw a-cent">
+    
+        
+    <img class="resize" src="./logo-big.png" alt="">
+        
+    <button id="target" onclick="Add()" class="dropbtn">+</button>
+
+</header>
+
+<div id="tracker-body" class="wrapper"></div>
+
+<div id="modal" class="modal" style="visibility:hidden">
+    <select id="select" onchange="change();">
+      <option value="" selected disabled hidden>Add Currency</option>
+    </select>
+  </div>
+
+
+<div id="nomics-ticker" class="bottom">
+    <div class="nomics-ticker-widget" data-base="BTC" data-quote="USD"></div>
+</div>
+
+<script src="./updateGraph.js"></script>
+<script src="./script.js"></script>
+<script src="https://widget.nomics.com/embed.js"></script>
+</body>
+</html>
