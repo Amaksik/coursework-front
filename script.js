@@ -12,11 +12,11 @@ const init = function(){
         array.forEach(name => {
             AddCurrency(name);
         })
-        UpdateGraph(array[0]);
+        AddGraph(array[0]);
     }
     else{
         names = ["TOR","ETH","ADA","ABC"];
-        UpdateGraph(names[Math.floor(Math.random() * names.length)]);
+        AddGraph(names[Math.floor(Math.random() * names.length)]);
     }
     
     asyncCountriesFetch();
