@@ -1,4 +1,4 @@
-const apiUrl = 'https://crypto-widget-prod-course-work-axm52l.mo6.mogenius.io/api/rate';//https://localhost:44358/api/rate
+const apiUrl = 'https://backend-prod-cursach-c52vjk.mo5.mogenius.io/';//https://localhost:44358/api/rate
 const cookieName = 'WidgetValues';
 
 console.log(window.innerWidth);
