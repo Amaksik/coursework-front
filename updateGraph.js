@@ -1,4 +1,4 @@
-defaultCurrencies = ["TOR","ETH","ADA","DOGE"];
+const defaultCurrencies = ["TOR","ETH","ADA","DOGE"];
 function AddGraph(name){
     var graphwrapper = document.getElementById('nomics-ticker');
     var graph = createGraphByName(name);
