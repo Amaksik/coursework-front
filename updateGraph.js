@@ -34,12 +34,12 @@ function GenerateGraph(){
             AddGraph(array[0]);
         }
         else{
-            AddGraph(defaultCurrencies[Math.floor(Math.random() * names.length)]);
+            AddGraph(defaultCurrencies[Math.floor(Math.random() * defaultCurrencies.length)]);
         }
     }
     else{
         
-        AddGraph(defaultCurrencies[Math.floor(Math.random() * names.length)]);
+        AddGraph(defaultCurrencies[Math.floor(Math.random() * defaultCurrencies.length)]);
     }
 }
 GenerateGraph();
