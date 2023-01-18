@@ -30,7 +30,13 @@ function AddCurrency(name){
         let new_price_value = document.createElement('span');
 
         new_price_name.innerText = name;
-        new_price_value.innerText= "20,72"
+        if(name == "BTC"){
+            new_price_value.innerText= "21086"
+        }
+        if(name == "ETC"){
+            new_price_value.innerText= "20,98"
+        }
+        
 
         new_price_div.appendChild(new_price_name);
         new_price_div.appendChild(new_price_value);
