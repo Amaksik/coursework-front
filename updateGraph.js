@@ -1,9 +1,3 @@
-// function UpdateGraph(){
-//     names = ["TOR","ETH","ADA","ABC"];
-//     const currencyName = names[Math.floor(Math.random() * names.length)]
-//     var widget = document.getElementById('nomics-ticker-replacible');
-//     widget.setAttribute('data-base',currencyName);
-// }
 function AddGraph(name){
     var graphwrapper = document.getElementById('nomics-ticker');
     var graph = createGraphByName(name);
