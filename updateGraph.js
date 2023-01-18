@@ -30,7 +30,12 @@ function GenerateGraph(){
     var latest = readSingleCookie();
     if(latest){
         let array = JSON.parse(latest);
-        AddGraph(array[0]);
+        if(array.length>0){
+            AddGraph(array[0]);
+        }
+        else{
+            AddGraph(defaultCurrencies[Math.floor(Math.random() * names.length)]);
+        }
     }
     else{
         
