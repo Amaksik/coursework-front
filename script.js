@@ -27,6 +27,7 @@ if(width<=500){
 function remove(el) {
     var element = el.currentTarget;
     element.remove()
+    Removecookies(element.firstChild.innerText)
   }
 function AddCurrency(name){
     if (CheckAmount()){
@@ -156,7 +157,22 @@ function Updatecookies(newname){
     if(!array){
         array = []
     }
-    array.push(newname);
+    if(!array.includes(newname)){
+        array.push(newname);
+        let value = JSON.stringify(array);
+    createHistoryCookie(value);
+    }
+    
+}
+function Removecookies(nameForRemoval){
+    let array = JSON.parse(readCookie());
+    if(!array){
+        return;
+    }
+    var index = array.indexOf(nameForRemoval);
+    if (index !== -1) {
+    array.splice(index, 1);
+    }
     let value = JSON.stringify(array);
     createHistoryCookie(value);
 }
