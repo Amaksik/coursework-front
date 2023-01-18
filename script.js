@@ -1,4 +1,4 @@
-const apiUrl = 'https://localhost:44358/api/rate'
+const apiUrl = 'https://crypto-widget-prod-course-work-axm52l.mo6.mogenius.io/api/rate'
 names = ["ETH","ADA","BTC", "DOGE"];
 console.log(document.cookie);
 const currencyName = names[Math.floor(Math.random() * names.length)]
